@@ -4,7 +4,7 @@
 
 MIT License
 
-Copyright (c) 2019 mY9Yd2 <github-username>
+Copyright (c) 2019-2021 mY9Yd2 <github-username>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ SOFTWARE.
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 const WebSocket = require('ws');
-const ws = new WebSocket('wss://spooky.ncore.cc:3001/spooky');
+const ws = new WebSocket('wss://spooky.ncore.pro:3001/spooky');
 
 ws.on('open', function () {
     console.log('WebSocket is open now.');
@@ -60,6 +60,7 @@ ws.on('message', function (m) {
             break;
 
         case 'spooky-event':
+            console.log('Success? ', x.success);
             console.log(x.text);
             break;
     }
