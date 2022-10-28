@@ -13,6 +13,6 @@
   "author": "mY9Yd2",
   "license": "MIT",
   "dependencies": {
-    "ws": "^8.2.3"
+    "ws": "^8.10.0"
   }
 }

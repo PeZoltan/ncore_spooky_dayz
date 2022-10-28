@@ -4,7 +4,7 @@
 
 MIT License
 
-Copyright (c) 2019-2021 mY9Yd2 <github-username>
+Copyright (c) 2019-2022 mY9Yd2 <github-username>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -37,11 +37,11 @@ ws.on('open', function () {
 });
 
 ws.on('message', function (m) {
-    var x = JSON.parse(m);
+    let x = JSON.parse(m);
 
     switch (x.type) {
         case 'spooky':
-            var currdatetime = new Date();
+            let currdatetime = new Date();
             console.log('\n' + currdatetime.toLocaleString());
 
             if (x.recaptcha) {
@@ -51,7 +51,7 @@ ws.on('message', function (m) {
 
             console.log('### INFO ###\nID: ' + x.eventid);
 
-            var a = {
+            let a = {
                 eventid: x.eventid,
                 userid: process.env['USERID']
             };
@@ -66,13 +66,11 @@ ws.on('message', function (m) {
     }
 });
 
-// NOTE: NOT TESTED
 ws.on('error', function (err) {
     console.error(err);
     process.exit();
 });
 
-// TODO: reconnect?
 ws.on('close', function () {
     console.log('Disconnected.');
     process.exit();
