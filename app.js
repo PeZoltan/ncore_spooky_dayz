@@ -53,6 +53,7 @@ ws.on('message', function (m) {
 
             let a = {
                 eventid: x.eventid,
+                uid: process.env['UNIQUE'],
                 userid: process.env['USERID']
             };
 
